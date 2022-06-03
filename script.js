@@ -114,15 +114,16 @@ function updateArray(index) {
     winner = player2.name;
   }
   let tie = gameBoard.array.filter((x) => x == " ").length == 0;
-  if (gameBoard.isGameEnd() || tie) {
+  let isGameEnd = gameBoard.isGameEnd();
+  if (isGameEnd || tie) {
     const allbtn = document.getElementsByClassName("btn");
     for (let i = 0; i < 9; i++) {
       allbtn[i].setAttribute("disabled", "disabled");
     }
-    if (tie) {
-      document.getElementById("winner").innerHTML = "Tie";
-    } else {
+    if (isGameEnd) {
       document.getElementById("winner").innerHTML = winner;
+    } else {
+      document.getElementById("winner").innerHTML = "Tie";
     }
   }
 }
