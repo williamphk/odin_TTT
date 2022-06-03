@@ -113,7 +113,7 @@ function updateArray(index) {
     player2.turn = false;
     winner = player2.name;
   }
-  let tie = gameBoard.array.filter((x) => (x = " ")).length == 0;
+  let tie = gameBoard.array.filter((x) => x == " ").length == 0;
   if (gameBoard.isGameEnd() || tie) {
     const allbtn = document.getElementsByClassName("btn");
     for (let i = 0; i < 9; i++) {
