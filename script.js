@@ -119,6 +119,10 @@ function updateArray(index) {
     for (let i = 0; i < 9; i++) {
       allbtn[i].setAttribute("disabled", "disabled");
     }
-    alert(tie ? "tie" : winner);
+    if (tie) {
+      document.getElementById("winner").innerHTML = "Tie";
+    } else {
+      document.getElementById("winner").innerHTML = winner;
+    }
   }
 }
