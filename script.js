@@ -4,61 +4,29 @@ const game = (function () {
       array: Array(9).fill(" "),
       isGameEnd() {
         let isEnd = false;
-        if (
-          this.array[0] == this.array[1] &&
-          this.array[0] == this.array[2] &&
-          this.array[0] != " "
-        ) {
-          isEnd = true;
-        }
-        if (
-          this.array[3] == this.array[4] &&
-          this.array[3] == this.array[5] &&
-          this.array[3] != " "
-        ) {
-          isEnd = true;
-        }
-        if (
-          this.array[6] == this.array[7] &&
-          this.array[6] == this.array[8] &&
-          this.array[6] != " "
-        ) {
-          isEnd = true;
-        }
-        if (
-          this.array[0] == this.array[3] &&
-          this.array[0] == this.array[6] &&
-          this.array[0] != " "
-        ) {
-          isEnd = true;
-        }
-        if (
-          this.array[1] == this.array[4] &&
-          this.array[1] == this.array[7] &&
-          this.array[1] != " "
-        ) {
-          isEnd = true;
-        }
-        if (
-          this.array[2] == this.array[5] &&
-          this.array[2] == this.array[8] &&
-          this.array[2] != " "
-        ) {
-          isEnd = true;
-        }
-        if (
-          this.array[0] == this.array[4] &&
-          this.array[0] == this.array[8] &&
-          this.array[0] != " "
-        ) {
-          isEnd = true;
-        }
-        if (
-          this.array[2] == this.array[4] &&
-          this.array[2] == this.array[6] &&
-          this.array[2] != " "
-        ) {
-          isEnd = true;
+        for (let i = 0; i < 3; i++) {
+          if (
+            this.array[i + 3] == this.array[i + 4] &&
+            this.array[i + 3] == this.array[i + 5] &&
+            this.array[i + 3] != " "
+          ) {
+            isEnd = true;
+          }
+          if (
+            this.array[i] == this.array[i + 3] &&
+            this.array[i] == this.array[i + 6] &&
+            this.array[i] != " "
+          ) {
+            isEnd = true;
+          }
+          if (
+            i != 1 &&
+            this.array[i] == this.array[4] &&
+            this.array[i] == this.array[8 - i] &&
+            this.array[i] != " "
+          ) {
+            isEnd = true;
+          }
         }
         return isEnd;
       },
