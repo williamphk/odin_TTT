@@ -6,9 +6,9 @@ const game = (function () {
         let isEnd = false;
         for (let i = 0; i < 3; i++) {
           if (
-            this.array[i + 3] == this.array[i + 4] &&
-            this.array[i + 3] == this.array[i + 5] &&
-            this.array[i + 3] != " "
+            this.array[i * 3] == this.array[i * 3 + 1] &&
+            this.array[i * 3] == this.array[i * 3 + 2] &&
+            this.array[i * 3] != " "
           ) {
             isEnd = true;
           }
